@@ -5,14 +5,29 @@ import { cn } from '../lib/utils';
 const ThemeToggle = () => {
     const [isDarkMode, setIsDarkMode] = useState(false);
 
+    // useLayoutEffect(() => {
+    //     const storedTheme = localStorage.getItem('theme');
+    //     if (storedTheme === 'dark') {
+    //         document.documentElement.classList.add('dark');
+    //         setIsDarkMode(true);
+    //     } else {
+    //         document.documentElement.classList.remove('dark');
+    //         setIsDarkMode(false);
+    //     }
+    // }, []);
+
     useLayoutEffect(() => {
         const storedTheme = localStorage.getItem('theme');
-        if (storedTheme === 'dark') {
-            document.documentElement.classList.add('dark');
-            setIsDarkMode(true);
-        } else {
+
+        if (storedTheme === 'light') {
             document.documentElement.classList.remove('dark');
             setIsDarkMode(false);
+        } else {
+            document.documentElement.classList.add('dark');
+            setIsDarkMode(true);
+            if (!storedTheme) {
+                localStorage.setItem('theme', 'dark');
+            }
         }
     }, []);
 
