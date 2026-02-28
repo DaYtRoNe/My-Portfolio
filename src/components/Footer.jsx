@@ -7,7 +7,7 @@ const Footer = () => {
             {" "}
             <p className="text-sm text-muted-foreground">
                 {" "}
-                &copy; {new Date().getFullYear()} Eshan Akalanka. All rights reserved.
+                &copy; {new Date().getFullYear()} Eshan Gunasekara. All rights reserved.
             </p>
         </footer>
     );
